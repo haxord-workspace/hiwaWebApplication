@@ -4,15 +4,27 @@ import { motion } from "framer-motion";
 import { ArrowRight, Users, Award, Calendar, Shield, Star, ChevronLeft, ChevronRight } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import AnimatedCounter from "@/components/AnimatedCounter";
-import RequestStaffModal from "@/components/RequestStaffModal";
 
-import heroBg from "@/assets/hero-event-bg.jpg";
+import heroBg from "@/assets/hero-bg.jpeg";
 import eventCorporateGala from "@/assets/event-corporate-gala.jpg";
 import eventWeddingReception from "@/assets/event-wedding-reception.jpg";
 import eventTechExhibition from "@/assets/event-tech-exhibition.jpg";
 import eventTeamFormal from "@/assets/event-team-formal.png";
 import eventCateringService from "@/assets/event-catering-service.png";
 import eventStaffBriefing from "@/assets/event-staff-briefing.png";
+import brand1 from "@/assets/brand1.jpeg";
+import brand2 from "@/assets/brand2.jpeg";
+import brand3 from "@/assets/brand3.jpeg";
+import brand4 from "@/assets/brand4.jpeg";
+import brand5 from "@/assets/brand5.jpeg";
+import brand6 from "@/assets/brand6.jpeg";
+import brand7 from "@/assets/brand7.jpeg";
+import brand8 from "@/assets/brand8.jpeg";
+import brand9 from "@/assets/brand9.jpeg";
+import brand10 from "@/assets/brand10.jpeg";
+import brand11 from "@/assets/brand11.jpeg";
+import brand12 from "@/assets/brand12.jpeg";
+import brand13 from "@/assets/brand13.jpeg";
 
 const highlights = [
   { icon: Users, title: "Trained Professionals", desc: "Skilled and experienced event staff" },
@@ -33,8 +45,11 @@ const featuredEvents = [
   { image: eventTechExhibition, title: "Tech Exhibition", category: "Exhibitions" },
 ];
 
+const brandImages = [
+  brand1, brand2, brand3, brand4, brand5, brand6, brand7, brand8, brand9, brand10, brand11, brand12, brand13
+];
+
 const Home = () => {
-  const [modalOpen, setModalOpen] = useState(false);
   const [testimonialIdx, setTestimonialIdx] = useState(0);
 
   return (
@@ -83,12 +98,12 @@ const Home = () => {
             transition={{ duration: 0.8, delay: 0.45 }}
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
-            <button
-              onClick={() => setModalOpen(true)}
-              className="px-6 py-3 sm:px-8 sm:py-4 rounded-lg bg-primary text-primary-foreground font-semibold text-base sm:text-lg hover:bg-primary/90 transition-all hover:shadow-xl hover:shadow-primary/20 hover:-translate-y-0.5"
+            <Link
+              to="/contact"
+              className="px-6 py-3 sm:px-8 sm:py-4 rounded-lg bg-primary text-primary-foreground font-semibold text-base sm:text-lg hover:bg-primary/90 transition-all hover:shadow-xl hover:shadow-primary/20 hover:-translate-y-0.5 flex items-center justify-center"
             >
-              Hire Staff
-            </button>
+              Request Staff
+            </Link>
             <Link
               to="/contact"
               className="px-6 py-3 sm:px-8 sm:py-4 rounded-lg border border-border text-foreground font-semibold text-base sm:text-lg hover:bg-secondary transition-all hover:-translate-y-0.5 flex items-center justify-center gap-2"
@@ -133,22 +148,10 @@ const Home = () => {
                   playsInline
                   poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 675'%3E%3Crect fill='%23111111' width='1200' height='675'/%3E%3C/svg%3E"
                 >
-                  <source src="https://res.cloudinary.com/dksirwbit/video/upload/v1774694347/hiwa_video_ejd6jn.mp4" type="video/mp4" />
+                  <source src="https://res.cloudinary.com/dksirwbit/video/upload/v1774766478/IMG_6955_1_lgwelr.mov" type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
-                <motion.div
-                  initial={{ opacity: 0.5 }}
-                  whileHover={{ opacity: 1 }}
-                  className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors flex items-center justify-center pointer-events-none"
-                >
-                  <motion.div
-                    initial={{ scale: 0.8 }}
-                    whileHover={{ scale: 1 }}
-                    className="w-20 h-20 rounded-full bg-primary flex items-center justify-center shadow-lg"
-                  >
-                    <div className="w-0 h-0 border-l-12 border-l-white border-t-8 border-t-transparent border-b-8 border-b-transparent ml-1" />
-                  </motion.div>
-                </motion.div>
+
               </div>
             </motion.div>
           </AnimatedSection>
@@ -321,17 +324,21 @@ const Home = () => {
           <AnimatedSection>
             <div className="mt-16 text-center">
               <p className="text-xs uppercase tracking-wider text-muted-foreground mb-6">Trusted by Leading Brands</p>
-              <div className="flex flex-wrap justify-center gap-8 opacity-40">
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <div key={i} className="w-24 h-10 rounded bg-muted-foreground/20" />
+              <div className="flex flex-wrap justify-center items-center gap-8 opacity-60">
+                {brandImages.map((brand, i) => (
+                  <div key={i} className="w-24 h-12 flex items-center justify-center">
+                    <img
+                      src={brand}
+                      alt={`Brand ${i + 1}`}
+                      className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                    />
+                  </div>
                 ))}
               </div>
             </div>
           </AnimatedSection>
         </div>
       </section>
-
-      <RequestStaffModal open={modalOpen} onClose={() => setModalOpen(false)} />
     </>
   );
 };

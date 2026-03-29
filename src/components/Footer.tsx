@@ -21,7 +21,7 @@ const Footer = () => (
         <div>
           <h4 className="font-display text-sm font-semibold uppercase tracking-wider text-primary mb-4">Services</h4>
           <ul className="space-y-2 text-sm text-muted-foreground">
-            {["Catering Staff", "Hosts & Hostesses", "Event Captains", "Site Managers", "Supervisors", "General Crew"].map((s) => (
+            {["Catering Staff", "Hosts & Hostesses", "Event Captains"].map((s) => (
               <li key={s}><Link to="/services" className="hover:text-foreground transition-colors">{s}</Link></li>
             ))}
           </ul>
@@ -41,9 +41,9 @@ const Footer = () => (
         <div>
           <h4 className="font-display text-sm font-semibold uppercase tracking-wider text-primary mb-4">Contact</h4>
           <ul className="space-y-3 text-sm text-muted-foreground">
-            <li className="flex items-center gap-2"><Phone size={14} className="text-primary" /> +971 50 123 4567</li>
-            <li className="flex items-center gap-2"><Mail size={14} className="text-primary" /> info@hiwamanpower.com</li>
-            <li className="flex items-start gap-2"><MapPin size={14} className="text-primary mt-0.5" /> Dubai, UAE</li>
+            <li className="flex items-center gap-2"><Phone size={14} className="text-primary" /> +91 81297 94377</li>
+            <li className="flex items-center gap-2"><Mail size={14} className="text-primary" /> hiwaevents1@gmail.com</li>
+            <li className="flex items-start gap-2"><MapPin size={14} className="text-primary mt-0.5" /> Vengara, Kerala, India</li>
           </ul>
           <div className="flex gap-3 mt-4">
             {[Instagram, Facebook, Linkedin].map((Icon, i) => (

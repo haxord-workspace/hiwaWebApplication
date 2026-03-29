@@ -59,12 +59,6 @@ const Navbar = () => {
               )}
             </Link>
           ))}
-          <Link
-            to="/contact"
-            className="px-5 py-2 rounded-lg bg-primary text-primary-foreground text-sm font-semibold hover:bg-primary/90 transition-all duration-300 hover:shadow-lg hover:shadow-primary/20"
-          >
-            Get Quote
-          </Link>
         </div>
 
         {/* Mobile toggle */}
@@ -94,12 +88,6 @@ const Navbar = () => {
                   {link.name}
                 </Link>
               ))}
-              <Link
-                to="/contact"
-                className="mt-2 px-5 py-3 rounded-lg bg-primary text-primary-foreground text-center font-semibold"
-              >
-                Get Quote
-              </Link>
             </div>
           </motion.div>
         )}
