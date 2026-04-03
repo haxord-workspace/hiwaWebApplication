@@ -31,7 +31,7 @@ const Footer = () => (
         <div>
           <h4 className="font-display text-sm font-semibold uppercase tracking-wider text-primary mb-4">Company</h4>
           <ul className="space-y-2 text-sm text-muted-foreground">
-            {[["About Us", "/about"], ["Gallery", "/gallery"], ["Contact", "/contact"]].map(([name, path]) => (
+            {[["About Us", "/about"], ["Gallery", "/gallery"], ["Contact", "/contact"], ["Privacy Policy", "/terms"]].map(([name, path]) => (
               <li key={path}><Link to={path} className="hover:text-foreground transition-colors">{name}</Link></li>
             ))}
           </ul>
